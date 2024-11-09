@@ -23,7 +23,9 @@ app.use( express.json() );
 app.use('/api/auth', require('./routes/auth') );
 // TODO: CRUD: Eventos
 
+const port = process.env.PORT || 3000;
+
 // Escuchar peticiones
-app.listen( process.env.PORT, () => {
+app.listen( process.env.PORT, "0.0.0.0", function () {
     console.log(`Servidor corriendo en el puerto ${ process.env.PORT }`);
 });
