@@ -101,7 +101,8 @@ const obtenerUsuarios = async (req, res = response) => {
             users: usuariosSinPassword,
         });
     } catch (error) {
-        console.log(error);
+        console.error('Error en obtenerUsuarios:', error.message);
+        console.error('Detalles:', error);
         res.status(500).json({
             ok: false,
             msg: "Error en obtenerUsuarios. Por favor hable con el administrador",
